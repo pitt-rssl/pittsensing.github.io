@@ -1,6 +1,6 @@
 # PittSensing
 
-Deploying Low-cost Air Quality (PM2.5) Sensors withing a Social-Sensing
+Deploying Low-cost Air Quality (PM2.5) Sensors within a Social-Sensing
 Framework: Examining Their Potential to Complement Existing
 Pollution-Measurement Frameworks in Pittsburgh
 
