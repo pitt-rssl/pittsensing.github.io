@@ -1,0 +1,720 @@
+/* Allow map to fill viewport */
+html, body, #map-canvas, .container-fluid
+{
+    /* Height of these elements */
+    height: 100%;
+
+    /* No margin around these elements */
+    margin: 0;
+
+    /* Disable scrollbars */
+    overflow: auto;
+
+    /* No padding within these elements */
+    padding: 0;
+}
+
+body
+{
+    /* Ignore height of navbar */
+    padding-top: 62px;
+}
+
+.register
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+.register .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+/* Set position of items in map to relative */
+.map
+{
+    position: relative;
+}
+
+/* Stylize card */
+.legend
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 1rem;
+    left: 1rem;
+    /* Set maximum width  */
+    width: 10.5rem;
+    /* Set font size */
+    font-size: 0.75rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    background-color: white;
+}
+.legend-title
+{
+    margin: 0;
+    text-align: center;
+}
+
+.legend p
+{
+    margin: 0;
+}
+
+
+/*div shown when a user selects 'sensor type' under the compare button */
+.company
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 2rem;
+    left: 12.5rem;
+    /* Set maximum width  */
+    max-width: 14rem;
+    max-height: 20rem;
+    /* Set font size */
+    font-size: 0.85rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    display:none;
+}
+.company-title
+{
+    margin: 0;
+    text-align: center;
+}
+.company-body
+{
+    padding: 0.75rem;
+    align-items: center;
+}
+.company p
+{
+    text-align: center;
+    margin: 0;
+}
+
+/*div shown when a user selects compare after selecting specific
+sensors under the compare button (returned information) */
+.return
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 2rem;
+    left: 32rem;
+    /* Set maximum width  */
+    max-width: 40rem;
+    max-height: 40rem;
+    /* Set font size */
+    font-size: 0.85rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    display:none;
+}
+.return-title
+{
+    margin: 0;
+    text-align: center;
+}
+.return-body
+{
+    padding: 0.75rem;
+}
+.return p
+{
+    margin: 0;
+    text-align: center;
+}
+
+/*div shown when a user selects 'selection' under the compare button
+(i.e. when a user selects the button to begin selecting sensors)*/
+.type
+{
+  position: fixed;
+  /* Fix card to bottom-left corner */
+  bottom: 2rem;
+  left: 12.5rem;
+  /* Set maximum width  */
+  max-width: 20rem;
+  max-height: 40rem;
+  /* Set font size */
+  font-size: 0.85rem;
+  /* Set z-index */
+  z-index: 2000;
+  border-radius: 15px;
+  display:none;
+}
+.type-box {
+  max-width: 20rem;
+  max-height: 40rem;
+}
+.type-title
+{
+    margin: 0;
+    text-align: center;
+}
+.type-body
+{
+    padding: 0.75rem;
+}
+.type p
+{
+    margin: 0;
+}
+
+.results-info {
+  text-align:center;
+}
+
+
+/*div shown for the humidity gradient of colors when the user
+chooses to filter by humidity */
+.hum-gradient
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 1rem;
+    left: 11.5rem;
+    /* Set maximum width  */
+    max-width: 40rem;
+    max-height: 40rem;
+    /* Set font size */
+    font-size: 0.85rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    display:none;
+}
+.hum-gradient-title
+{
+    margin: 0;
+    text-align: center;
+}
+.hum-gradient-body
+{
+    padding: 0.75rem;
+}
+
+
+/*div shown for the temperature gradient of colors when the user
+chooses to filter by temperature */
+.temp-gradient
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 1rem;
+    left: 12rem;
+    /* Set maximum width  */
+    max-width: 40rem;
+    max-height: 40rem;
+    /* Set font size */
+    font-size: 0.85rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    display:none;
+}
+.temp-gradient-title
+{
+    margin: 0;
+    text-align: center;
+}
+.temp-gradient-body
+{
+    padding: 0.75rem;
+}
+
+
+/*div shown for the pm2.5 gradient of colors when the user
+chooses to filter by pm2.5 */
+.pm25-gradient
+{
+    position: fixed;
+    /* Fix card to bottom-left corner */
+    bottom: 1rem;
+    left: 12rem;
+    /* Set maximum width  */
+    max-width: 40rem;
+    max-height: 40rem;
+    /* Set font size */
+    font-size: 0.85rem;
+    /* Set z-index */
+    z-index: 2000;
+    border-radius: 15px;
+    display:none;
+}
+.pm25-gradient-title
+{
+    margin: 0;
+    text-align: center;
+}
+.pm25-gradient-body
+{
+    padding: 0.75rem;
+}
+/*text below title on color gradients displayed when
+the user selects a filter*/
+.gradient-info {
+  text-align: center;
+}
+/*The 'Filter' button above Legend */
+.button3 {
+  padding: 5px;
+  font-size: 1.15rem;
+  font-weight: 470;
+  color: dark-gray;
+  width: 155px;
+  height:55px;
+  background: transparent;
+  border-radius: 1px;
+  border-radius: 15px;
+  text-align: center;
+  align-self: center;
+
+}
+/*The 'Compare' button above Legend */
+.button4 {
+  padding: 5px;
+  font-size: 1.10rem;
+  font-weight: 470;
+  width: 155px;
+  height:55px;
+  background: transparent;
+  border-radius::1px;
+  border-radius: 15px;
+  text-align: center;
+  align-self: center;
+}
+
+/* Filter button group */
+.btn-group {
+  display: none;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right:10px;
+  align-content:center;
+  align-self: left;
+  width: 10.5rem;
+  max-height: 50rem;
+}
+/* Compare button group */
+.btn-group2 {
+  display: none;
+  text-align: center;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-content: center;
+  align-self: left;
+  width: 10.5rem;
+  max-height: 50rem;
+}
+
+/*The 'Filter' buttons: temperature, pm2.5, humidity, no filter */
+.fil-btn-field {
+  width: 9rem;
+  height: 3.5rem;
+  background: transparent;
+  border-radius: 0.25px;
+  border-color: white;
+  border-radius: 15px;
+  font-size: 12.35px;
+  font-weight: 465;
+}
+/*The 'Compare' buttons: 'selection' and 'sensor type' */
+.fil-btn-field2 {
+  width: 9rem;
+  height: 3.5rem;
+  background: transparent;
+  border-radius: 0.25px;
+  border-color: white;
+  border-radius: 15px;
+  font-size: 12.35px;
+  font-weight: 465;
+  float: left;
+}
+/*The buttons underneath the 'selection' option under the 'Compare'
+  button (return, clear, and compare)*/
+.fil-btn-field4 {
+  width: 85px;
+  height:40px;
+  background: transparent;
+  border-radius::1px;
+  border-color: white;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 465;
+}
+/*The 'Filter' button above Legend */
+.fil-btn-field5 {
+  width: 180px;
+  height:40px;
+  background: transparent;
+  border-radius::1px;
+  border-color: white;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 465;
+}
+/*The 'return' button under the 'sensor type' option under the
+'Comapre' button  */
+.fil-btn-field6 {
+  width: 70px;
+  height:40px;
+  background: transparent;
+  border-radius: 1px;
+  border-color: white;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 465;
+  align-self: center;
+}
+
+.select-text {
+  font-size: 0.9rem;
+  font-weight: 470;
+  text-align: center;
+}
+
+/* Stylize the download page */
+#download-options
+{
+    width: 100%;
+}
+
+#datasets
+{
+    width: 250px;
+    height: 37px;
+}
+
+#start-time, #end-time
+{
+    width: 150px;
+    height: 37px;
+}
+
+#name, #email
+{
+    width: 250px;
+    height: 37px;
+}
+
+#comments
+{
+    width: 400px;
+}
+
+#download-spinner
+{
+    display: none;
+}
+
+#success, #warning
+{
+    display: none;
+}
+
+/* Stylize the navbar */
+.sensing-navbar
+{
+    background-color: white;
+    border-bottom: 3px solid rgba(0, 53, 148, 0.65);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+}
+
+/* Stylize navbar title */
+.navbar-title
+{
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+/* Override navbar color */
+.navbar-light .navbar-nav .nav-link
+{
+    color: black;
+}
+
+/* Stylize the Google Maps marker */
+.marker
+{
+    width: 25px;
+    height: 50px;
+}
+
+
+/* Change padding in Bootstrap list-group-item */
+.pm-readings
+{
+    padding: 0.60rem 1.00rem;
+}
+
+/* Remove vertical borders */
+.no-vertical-border
+{
+    border-right: 0;
+    border-left: 0;
+}
+
+/* Stylize horizontal divider */
+hr.divider
+{
+    margin: 0.5em;
+}
+
+/* Stylize info window */
+#info
+{
+    /* No margin around this element */
+    margin: 0;
+
+    /* Allow scrollbars as needed */
+    overflow: auto;
+}
+#info ul
+{
+    margin-bottom: 0;
+}
+
+nav
+{
+    font-size: 1.15rem;
+}
+
+/* Stylize title */
+.title
+{
+    font-weight:normal;
+    text-align: center;
+}
+
+/* CSS for Pitt colors */
+.pitt-colors
+{
+    background-color: #003594;
+    color: white;
+}
+
+.pitt-logo
+{
+    position: relative;
+    top: -3px;
+}
+
+.bold
+{
+    font-weight: 400;
+}
+
+/* Poppins font */
+.poppins
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Rubik font */
+.rubik
+{
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Rubik font with FontAwesome */
+.fa-rubik
+{
+    font-family: 'Rubik', FontAwesome;
+}
+
+/* Scroll capabilities */
+.scrollbar
+{
+    position: relative;
+    overflow: auto;
+    height: 100%;
+}
+
+/* Stylize chart */
+.chart-container
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+.chart-body
+{
+    width: 530px;
+    height: 270px;
+}
+
+.card-body
+{
+    padding: 0.75rem;
+}
+
+/* Center form */
+#form
+{
+    /* Position form "absolutely" where we want it */
+    position: absolute;
+
+    /* Distance from top edge of viewport */
+    top: 28px;
+
+    /* Form's width */
+    width: 100%;
+
+    /* Center */
+    margin: 0 auto;
+
+    /* Set z-index */
+    z-index: 2000;
+}
+
+#form .form-group
+{
+    /* Block-level flex container */
+    display: flex;
+
+    /* Center container's content */
+    justify-content: center;
+}
+
+/* Stylize text box */
+#q
+{
+    /* Override typeahead.js's transparent background */
+    background-color: #ffffff !important;
+
+    /* Text box's width */
+    width: 300px;
+}
+
+/* Stylize home page jumbotron */
+.jumbotron
+{
+    background-color: #f9fafb;
+}
+
+.jumbotron-title
+{
+    font-weight: 500;
+}
+
+.register-form
+{
+    width: 100%;
+    max-width: 525px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.download-form
+{
+    width: 100%;
+    max-width: 725px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.nav a
+{
+    color: white !important;
+    font-size: 1.8em !important;
+}
+
+.pitt-blue
+{
+    color: #00205B;
+}
+
+.orange
+{
+    color: #f0ad4e;
+}
+
+.pitt-bg
+{
+    background-color: #f0ad4e;
+}
+
+.white
+{
+    color: #FFFFFF;
+}
+
+.text
+{
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+.list
+{
+    font-size:16px;
+}
+
+.compare
+{
+    border: 1px solid #ddd;
+}
+
+/* Override bootstrap rounded */
+.rounded
+{
+    border-radius: 1.25rem !important;
+}
+
+.box-shadow
+{
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* stylize typeahead.js a la http://twitter.github.io/typeahead.js/css/examples.css */
+.tt-menu
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 300px;
+}
+
+.tt-suggestion.tt-cursor
+{
+    background-color: #0097cf;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tt-suggestion
+{
+    margin: 0;
+    padding: 6px 12px;
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+    PittSensing | Data
+</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- http://getbootstrap.com/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
+
+        <!-- FontAwesome -->
+        <script src="https://use.fontawesome.com/7b06c0b9b4.js"></script>
+
+        <!-- https://developers.google.com/maps/documentation/javascript/ -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBykpk78saRKMk0lDC0R6L8y6oJ8oCVTp4&v=3.exp"></script>
+
+        <!-- https://momentjs.com/downloads/moment.js -->
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+
+        <!-- https://cdnjs.com/libraries/Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+        <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+        <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+
+        <!-- http://handlebarsjs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <!-- App's own CSS -->
+        <link href="/static/styles/styles.css" rel="stylesheet"/>
+
+        <!-- app's favicon -->
+        <link href="/static/imgs/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
+          <div class="container">
+            <a href="/">
+              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+            </a>
+            <span class="navbar-title">
+              PittSensing
+            </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mr-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/data">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/embedded">Embedded</a>
+                </li>
+              </ul>
+
+              <a href="/map" class="btn btn-dark my-2 my-sm-0 rounded-pill" role="button">Platform</a>
+            </div>
+          </div>
+        </nav>
+
+        
+          
+        
+
+        
+    <div class="container p-4 download-form">
+        <!-- Warning Alert -->
+        <div class="alert alert-danger alert-dismissible fade show" id="warning" role="alert">
+            <p class="mb-0 warning-text"></p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>        
+        </div>
+
+        <!-- Success Alert -->
+        <div class="alert alert-success alert-dismissible fade show" id="success" role="alert">
+            <p class="mb-0">Data successfully downloaded!</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <!-- Download Text -->
+        <div><h2>Download PittSensing Data</h2></div>
+        <hr class="featurette-divider">
+                <div class="text-try">
+            <b class="lead">Download Notes. </b>
+            <ul class="list">
+                <li>Downloading data requires you enter something in the Name and Email fields.</li>
+                <li>The information you submit will not be shared and is used only to have some idea of what data is being downloaded.</li>
+            </ul>
+        </div>
+        <div class="text-try">
+            <b class="lead">This datasets are in CSV format. </b>
+            <b class="lead">Data fields include: </b>
+            <ul class="list">
+                <li>Name of the sensing device</li>
+                <li>Date and time of PittSensing data:</li>
+                <ul style="list-style-type:circle">
+                <li>Dates are in Eastern Standard Time (EST).</li>
+                <li>The date/time is formatted as follows: YYYY-MM-DD HH24:MM:SS.</li>
+                </ul>
+                <li>Particulate Matter (PM) values</li>
+                <li>Depending on the dataset, additional information can be provided such as: humidity and temperature</li>
+            </ul>
+        </div>
+        <hr class="featurette-divider">
+
+        <!-- Personal information -->
+        <div>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name">
+        </div>
+        <br>
+        <div>
+            <form>
+                <label for="email">Email address:</label>
+                <br>
+                <input type="email" id="email">
+            </form>
+        </div>
+        <br>
+        <div>
+            <label for="comments">Optional comments: (like what you plan on using PittSensing data for):</label>
+            <br>
+            <textarea id="comments" rows="3"></textarea>
+        </div>
+        <br>
+
+        <!-- Download Options -->
+        <div id="download-options">
+            <div>
+                <label for="date">Select Dataset:</label>
+                <br>
+                <select id="datasets">
+                    <option value="pittair">PittAir</option>
+                    <option value="sck">Smart Citizen Kit</option>
+                    <option value="purpleair">PurpleAir</option>
+                    <option value="alleghenycounty">Allegheny County</option>
+                </select>
+            </div>
+            <br>
+            <div id ="between-dates">
+                <label class="time-label">Select a time range: </label>
+                <br>
+                <!-- Select start time -->
+                <input type="date" id="start-time" name="start-time">
+                to
+                <!-- Select end time -->
+                <input type="date" id="end-time" name="end-time">
+            </div>
+            <div class="form-check mt-1">
+                <input class="form-check-input" type="checkbox" value="" id="download-all">
+                <label class="form-check-label" for="download-all">
+                All dates
+                </label>
+            </div>
+            <br>
+            <div>
+                <!-- Loading -->
+                <button class="btn btn-primary" id="download-button" type="button">
+                    <span class="spinner-border spinner-border-sm mr-1" id="download-spinner" role="status" aria-hidden="true"></span>
+                    <span id="download-text">Download</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- App's own Javascript -->
+        <script src="/static/scripts/scripts.js"></script>
+        
+<script src="/static/scripts/download.js"></script>
+
+    </body>
+</html>

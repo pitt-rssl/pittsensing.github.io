@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+    PittSensing
+</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- http://getbootstrap.com/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
+
+        <!-- FontAwesome -->
+        <script src="https://use.fontawesome.com/7b06c0b9b4.js"></script>
+
+        <!-- https://developers.google.com/maps/documentation/javascript/ -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBykpk78saRKMk0lDC0R6L8y6oJ8oCVTp4&v=3.exp"></script>
+
+        <!-- https://momentjs.com/downloads/moment.js -->
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+
+        <!-- https://cdnjs.com/libraries/Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+        <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+        <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+
+        <!-- http://handlebarsjs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <!-- App's own CSS -->
+        <link href="/static/styles/styles.css" rel="stylesheet"/>
+
+        <!-- app's favicon -->
+        <link href="/static/imgs/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
+          <div class="container">
+            <a href="/">
+              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+            </a>
+            <span class="navbar-title">
+              PittSensing
+            </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mr-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/data">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/embedded">Embedded</a>
+                </li>
+              </ul>
+
+              <a href="/map" class="btn btn-dark my-2 my-sm-0 rounded-pill" role="button">Platform</a>
+            </div>
+          </div>
+        </nav>
+
+        
+          
+        
+
+        
+
+<!-- style for Fields box -->
+<style>
+  .fields-body {
+    text-align: center;
+  }
+  .fields_selection {
+    text-align: center;
+  }
+</style>
+
+<!-- Fill viewport -->
+<div class="container-fluid map">
+
+    <!-- https://leafletjs.com/examples/quick-start/ -->
+    <div id="map-canvas"></div>
+
+    <!-- https://getbootstrap.com/docs/4.4/components/card/ -->
+    <div class="card legend bg-light rubik">
+      <div class="card filterButton bg-light rubik">
+        <button class="button button4" onClick="showCompare()"> Compare <img src=""/></button>
+        <div id="btn-group2" class="btn-group2">
+                <button class="fil-btn-field2" onClick="handleSelector(1)"> Selection <img src="../static/imgs/filter_buttons/usr_select_def.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field2" onClick="handleSelector(2)"> Sensor Type <img src="../static/imgs/filter_buttons/sensortype_select_def.png" heigth="40" width="40"/></button>
+        </div>
+        <button class="button button3" onClick="showFilter()"> Filter<img src=""/></button>
+        <div id="btn-group" class="btn-group">
+                <button class="fil-btn-field" onClick="filterData(1)">Temperature   <img src="../static/imgs/filter_buttons/temp_default.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field" onClick="filterData(2)">PM 2.5   <img src="../static/imgs/filter_buttons/pm25_default.png"  heigth="40" width="40" /></button>
+                <button class="fil-btn-field" onClick="filterData(3)">Humidity   <img src="../static/imgs/filter_buttons/humidity_default.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field" onClick="filterData(0)">No Filter   <img src="../static/imgs/filter_buttons/nofilter_default.png" heigth="40" width="40"/></button>
+        </div>
+      </div>
+        <div class="card-body legend-body">
+            <h5 class="card-title legend-title">Legend</h5>
+            <hr class='divider'/>
+            <p class="card-text">Allegheny County:<img src="../static/imgs/default_sensor_imgs/alleghenycounty_def.png" width="35" height = "35"></p>
+            <p class="card-text">PurpleAir:<img src="../static/imgs/default_sensor_imgs/purpleair_def.png" width="35" height = "35"></p>
+            <p class="card-text">SmartCitizenKit:<img src="../static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></p>
+        </div>
+    </div>
+    <div id="company-box" class="card company bg-light rubik">
+      <div class="card-body company-body">
+          <h5 class="card-title company-title">Select Sensor Type</h5>
+            <p>Which type of sensor?</p>
+          <hr class='divider'/>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(1)"> SmartCitizenKit  <img src="../static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></button>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(2)"> PurpleAir  <img src="../static/imgs/default_sensor_imgs/purpleair_def.png"  width="35" height = "35"></button>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(3)"> Allegheny  <img src="../static/imgs/default_sensor_imgs/alleghenycounty_def.png"  width="35" height = "35"></button>
+          <button class="fil-btn-field6" onClick="reset()" >Return<img src=""/></button>
+      </div>
+    </div>
+
+    <div id="hum-gradient" class="card hum-gradient bg-light rubik">
+      <div class="card-body hum-gradient-body">
+          <h5 class="card-title hum-gradient-title">Humidity</h5>
+          <p class="gradient-info"> g.kg-1 </p>
+            <img src="../static/imgs/Gradients/humRainBow.png" >
+          </div>
+    </div>
+    <div id="temp-gradient" class="card temp-gradient bg-light rubik">
+      <div class="card-body temp-gradient-body">
+          <h5 class="card-title temp-gradient-title">Temperature</h5>
+          <p class="gradient-info"> Celsius °C </p>
+            <img src="../static/imgs/Gradients/tempRainBow.png" >
+          </div>
+    </div>
+    <div id="pm25-gradient" class="card pm25-gradient bg-light rubik">
+      <div class="card-body pm25-gradient-body">
+          <h5 class="card-title pm25-gradient-title">PM 2.5</h5>
+            <img src="../static/imgs/Gradients/pm25RainBow.png" >
+          </div>
+    </div>
+
+    <div id="type-box" class="card type bg-light rubik">
+      <div class="card-body type-body">
+          <h5 class="card-title type-title">Added Sensors:</h5>
+          <p>Click on sensors to add</p>
+          <hr class='divider'/>
+          <p class="card-text">Selected Sensors <img src="../static/imgs/filter_buttons/usr_select_def.png" width="25" height = "25"></p>
+          <p id="info"></p>
+          <button class="fil-btn-field4" onClick="generateResultsUserSelect()"> Compare  <img src=""/></button>
+          <button class="fil-btn-field4" onClick="clearSensorList()"> Clear  <img src=""/></button>
+          <button class="fil-btn-field4" onClick="reset()"> Return  <img src=""/></button>
+        </div>
+    </div>
+    <div id="return-box" class="card return bg-light rubik">
+      <div class="card-body type-body">
+          <h5 class="card-title return-title">Results</h5>
+          <p id="return-info" class="return-info"></p>
+        </div>
+    </div>
+
+    <!-- http://getbootstrap.com/css/#forms -->
+    <form id="form" class="fa-rubik">
+        <div class="form-group ml-3">
+            <label class="sr-only" for="q">Search sensor name</label>
+            <input class="form-control" id="q" placeholder="&#xf002  Search sensor name" type="text"/>
+        </div>
+    </form>
+
+    <!-- Chart.JS -->
+    <div class="chart-container mt-4 ml-3 rubik">
+        <div class="card">
+            <div class="card-title text-center">
+                <button type="button" class="close mr-3 mt-3" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="chart-title mt-3"></div>
+            </div>
+            <div class="card-body">
+                <div class="chart-body">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+            <div class="container mb-2">
+                <div class="row align-middle">
+                    <div class="col-sm-auto">
+                      <!--  <form class="form-inline">
+                          <label for="fields_selection">Filter:</label>
+                          <select id="fields_selection" class="form-control form-control-sm ml-2">
+                              <option value="_pm25">PM 2.5<img src="../static/imgs/pm25_default.png"/></option>
+                              <option value="_temp">Temperature<img src="../static/imgs/temp_default.png"/></option>
+                              <option value="_humidity">Humidity<img src="../static/imgs/humidity_default.png"/></option>
+                          </select>
+                        </form> -->
+                        <form class="form-inline">
+                            <label for="timeframe">Range:</label>
+                            <select id="timeframe" class="form-control form-control-sm ml-2">
+                                <option value="1_day">One Day</option>
+                                <option value="1_week">One Week</option>
+                                <option value="1_month">One Month</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-light btn-sm compare float-right">Compare</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+        <!-- App's own Javascript -->
+        <script src="/static/scripts/scripts.js"></script>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+    PittSensing | Home
+</title>
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- http://getbootstrap.com/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
+
+        <!-- FontAwesome -->
+        <script src="https://use.fontawesome.com/7b06c0b9b4.js"></script>
+
+        <!-- https://developers.google.com/maps/documentation/javascript/ -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBykpk78saRKMk0lDC0R6L8y6oJ8oCVTp4&v=3.exp"></script>
+
+        <!-- https://momentjs.com/downloads/moment.js -->
+        <script src="https://momentjs.com/downloads/moment.js"></script>
+
+        <!-- https://cdnjs.com/libraries/Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+        <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+        <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+
+        <!-- http://handlebarsjs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <!-- App's own CSS -->
+        <link href="/static/styles/styles.css" rel="stylesheet"/>
+
+        <!-- app's favicon -->
+        <link href="/static/imgs/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
+          <div class="container">
+            <a href="/">
+              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+            </a>
+            <span class="navbar-title">
+              PittSensing
+            </span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mr-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/data">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/embedded">Embedded</a>
+                </li>
+              </ul>
+
+              <a href="/map" class="btn btn-dark my-2 my-sm-0 rounded-pill" role="button">Platform</a>
+            </div>
+          </div>
+        </nav>
+
+        
+          
+        
+
+        
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1 class="display-3 jumbotron-title">PittSensing</h1>
+    <h2 class="lead">Developing a network of low-cost sensors operated and maintained by citizen scientists to measure and understand environmental metrics in the Nine Mile Run Watershed in Pittsburgh, PA, USA</h2>
+    <a href="/map" class="btn btn-dark btn-lg mt-5 my-2 my-sm-4 rounded-pill" role="button">View the Map</a>
+  </div>
+</div>
+
+<div class="container marketing">
+
+  <div class="my-4 p-3 bg-white rounded box-shadow">
+    <h3 class="featurette-heading">Announcements</h3>
+    <hr class="featurette-divider">
+    <p class="">
+
+    We will host an opening reception of the art show <i>Embedded</i> by Petra Floyd in the main lobby of the IS Building (135 N Bellefield Ave) on 24th March, 2023 at 4PM. The exhibit will be shown through the month of April.
+    
+    <hr class="featurette-divider">
+    <p class="">
+      We conducted 2 Data Storytelling workshops on 19th April, 2022 and 26th April, 2022 in the School of Information Sciences. Together, we explored data from the pilot project, and other local air quality datasets (ACHD, SmellPgh, iNaturalist, etc.) using the free software Tableau Public.
+      We introduced participants to the basic interface and working with Tableau, and conducted activities to enable storytelling through those datasets. We saw participation from 19 attendees, all interested in local air quality data and finding ways to reduce air pollution in Pittsburgh. These workshops were sponsored by the <a href = "https://yearofdataandsociety.pitt.edu/">Year of Data and Society at University of Pittsburgh</a>.
+
+      You can find the slides from the workshops here:
+
+      <br><a href = "https://docs.google.com/presentation/d/1KqwPc4alGhUo7qUKgb1fTQ2GeXUOyUosd7ISaBjbb-c/edit?usp=sharing">First workshop - 19th April, 2022</a>
+      <br><a href = "https://docs.google.com/presentation/d/1QLKWPlj0f5Lt6a3L_ovERyn84oPUT-z6F8mALpGlH7c/edit?usp=sharing">Second workshop - 19th April, 2022</a>
+
+      <br><a href = "https://drive.google.com/drive/folders/1BgsTk7aADcfZhddewSwLr1Cz7FFNO3Qt?usp=sharing">Datasets and maps that were used during the workshops</a>
+
+      The three main research questions we are trying to address are:
+
+      <ol>
+        <li>How can data-storytelling workshops be designed to make local civic data more accessible?</li>
+        <li>What are participant perspectives on how to bridge the gap between abundance of air quality data, and its effective use for advocacy and change?</li>
+        <li>What is the role of data in people’s understanding of local air quality? How can we enhance it?</li>
+      </ol> 
+
+      We will be working on analyzing the data from the workshops to understand the outcomes of the workshop, and to address the research questions.
+
+    <hr class="featurette-divider">
+    <p class="">
+      We conducted 3 information sessions between 8th May and 18th May 2021 to explain our system's intent and recruit 20 participants for the pilot project.<br>
+      You can watch a recording and look through some Frequently Asked Questions to learn more about the project:
+      <br>
+      <a href="https://pitt.zoom.us/rec/play/nScf1V_7UlnzhfSrju_hs3sKYodNMT8S0BNj78Sn6rjKAuuhbn_7m9W2nxHt7EnTEBuufi33d1KAtmpC.i5mnctk6fFwvbA-P?continueMode=true">Info-Session Recording</a>
+
+      <br>
+      <a href="https://docs.google.com/document/d/17aBJeFMyANnQhX7RFenVt-kzxyRFZ-rvLIT7jIwcAvY/edit">Frequently Asked Questions</a>
+
+      <br>
+      <br>
+      As of 7th June 2021, we have received over 20 responses and will not be accepting any more participants for our pilot project at this time. We hope to expand the project and open it to everyone after the pilot project is complete. 
+    <br>
+    <br>
+    The setup workshops will be conducted on 11th July at 11AM and 12th July at 6PM. <u>Confirmed participants only need to attend one of the workshops.</u>  
+    </p>
+  </div>
+
+  <div class="my-4 p-3 bg-white rounded box-shadow">
+    <h3 class="featurette-heading">Motivation</h3>
+    <hr class="featurette-divider">
+    <p class="">
+      Pittsburgh has a legacy as SW PA's industrial center, however this legacy comes with Allegheny County consistently ranking among the worst air-quality regions in the country.
+      Consistently monitoring air quality and understanding its effects on human health and the surrounding biosphere has been challenging, due to the specialized and expensive nature of monitoring equipment, as well as inadequate governmental support.
+      However, with newly developed low-cost sensors, easy-to-use electronic equipment, and Citizen Science, it has become possible to regularly monitor the environment that we live in, and to make sense of it with the help of our own experiences.
+    </p>
+  </div>
+
+  <div class="my-4 p-3 bg-white rounded box-shadow">
+    <h3 class="featurette-heading">Approach</h3>
+    <hr class="featurette-divider">
+    <p>We are developing a network of low-cost sensors that are integrated into a locally-based social-network platform (Slack) for citizens concerned about their environment to build neighborhood connections, locally around the fresh perspectives they gain from sensing the world around them.</p>
+    <p>The low-cost sensing devices are <a href="https://smartcitizen.me/">Smart Citizen Kits</a> installed in Citizen Scientists' homes, to measure Air Quality (PM2.5, eVOCs, eCO2), Air Temperature, Relative Humidity, Noise levels, Ambient Light, and Barometric Pressure. These readings are automatically collected by the SCK and sent to the social media system, with the server routinely injecting analyses of these data into the social network.</p>
+    <p>Participants also collect manual readings with rain gauges and upload the data into the system, along with observations and their own analyses of the data collected by their devices. Through this increased engagement with environmental metrics and a network of concerned citizens, it is our aim to understand and better conserve the natural resources in the environment around us.</p>
+    <p>Combined with other sources of environmental data, the system complements existing official sources and provides researchers and residents of a neighborhood with data that has better spatial and temporal resolution.</p>
+  </div>
+
+  <div class="my-4 p-3 bg-white rounded box-shadow">
+    <h3 class="featurette-heading">On-The-Ground:</h3>
+    <hr class="featurette-divider">
+    <p>We are currently preparing for a pilot deployment of the Social-Sensing System in the Nine Mile Run Watershed, Pittsburgh, PA. <a href="https://upstreampgh.org">Upstream Pittsburgh </a> (formerly Nine Mile Run Watershed Association) has been active in stewarding the watershed with a variety of innovative urban ecology projects designed to directly involve the watershed residents in helping to improve the health of the watershed.</p>
+    <p>The system data is complemented by other data freely available in the region, from <a href="https://data.wprdc.org/dataset/allegheny-county-air-quality">Allegheny County official air quality monitors</a>, <a href="https://www2.purpleair.com">PurpleAir monitors</a>, and <a href="https://smellpgh.org">SmellPGH</a> data.</p>  
+  </div>
+
+  <div class="my-4 p-3 bg-white rounded box-shadow">
+    <h3 class="featurette-heading">Contribute:</h3>
+    <hr class="featurette-divider">
+    <p>If you would like to get involved in developing the system, or know more about the Social-Sensing System, please email us: <a href="mailto: abv13@pitt.edu">Abhishek Viswanathan</a>, <a href="mailto: aaron@upstreampgh.org">Aaron Birdy</a>, <a href="mailto: ">Amy Babay</a>.</p>
+  </div>
+
+  <!-- <div class="row featurette mt-2">
+    <div class="col-md-10">
+      <h2 class="featurette-heading">Motivation</h2>
+      <hr class="featurette-divider">
+      <p class="lead">
+        Pittsburgh has a legacy as SW PA's industrial center, however this legacy comes with Allegheny County consistently ranking among the worst air-quality regions in the country.
+        Consistently monitoring air quality and understanding its effects on human health and the surrounding biosphere has been challenging, due to the specialized and expensive nature of monitoring equipment, as well as inadequate governmental support.
+        However, with newly developed low-cost sensors, easy-to-use electronic equipment, and Citizen Science, it has become possible to regularly monitor the environment that we live in, and to make sense of it with the help of our communities.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <img src="/static/imgs/airquality-PIT.jpg" alt="" width="400" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 400x400" >
+    </div>
+  </div>
+
+  <div class="row featurette mt-4">
+    <div class="col-md-10">
+      <h2 class="featurette-heading">Approach</h2>
+      <hr class="featurette-divider">
+      <p class="lead">We are developing a network of low-cost sensors that are integrated into a locally-based social-network platform (Slack) for citizens concerned about their environment to build community locally around the fresh perspectives they gain from sensing the world around them.</p>
+      <p class="lead">The low-cost sensing devices are <a href="https://smartcitizen.me/">Smart Citizen Kits</a> installed in Citizen Scientists' homes, to measure Air Quality (PM2.5, eVOCs, eCO2), Air Temperature, Relative Humidity, Noise levels, Ambient Light, and Barometric Pressure. These readings are automatically collected by the SCK and sent to the social media system, with the server routinely injecting analyses of these data into the social network.</p>
+      <p class="lead">Participants also collect manual readings with rain gauges and upload the data into the system, along with observations and their own analyses of the data collected by their devices. Through this increased engagement with environmental metrics and a community of concerned citizens, it is our aim to understand and better conserve the natural resources in the environment around us.</p>
+      <p class="lead">Combined with other sources of environmental data, the system complements existing official sources and provides researchers and communities with data that has better spatial and temporal resolution.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img src="/static/imgs/sensor.jpeg" alt="" width="400" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 400x400" >
+    </div>
+  </div>
+
+  <div class="row featurette mt-4">
+    <div class="col-md-10">
+      <h2 class="featurette-heading">On-the-ground:</h2>
+      <hr class="featurette-divider">
+      <p class="lead">We are currently preparing for a pilot deployment of the Social-Sensing System in the Nine Mile Run Watershed, Pittsburgh, PA. The <a href="https://ninemilerun.org">Nine Mile Run Watershed Association</a> (NMRWA) has been active in stewarding the watershed with a variety of innovative urban ecology projects designed to directly involve the community in helping to improve the health of the watershed.</p>
+      <p class="lead">The system data is complemented by other data freely available in the region, from <a href="https://data.wprdc.org/dataset/allegheny-county-air-quality">Allegheny County official air quality monitors</a>, <a href="https://www2.purpleair.com">PurpleAir monitors</a>, and <a href="https://smellpgh.org">SmellPGH</a> data.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="/static/imgs/result.jpeg" alt="" width="500" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x400" >
+    </div>
+  </div>
+
+  <div class="row featurette my-4">
+    <div class="col-md-10">
+      <h2 class="featurette-heading">Contribute:</h2>
+      <hr class="featurette-divider">
+      <p class="lead">If you would like to get involved in developing the system, or be part of the Social-Sensing System with your own sensing device as a citizen scientist, please contact us at <a href="mailto: abv13@pitt.edu">Abhishek Viswanathan</a>, <a href="mailto: vax1@pitt.edu">Vasco, Xu</a>, <a href="mailto: ">Amy Babay</a>.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="/static/imgs/result.jpeg" alt="" width="500" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x400" >
+    </div>
+  </div> -->
+
+  <!-- Footer -->
+  <!-- <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer> -->
+
+</div>
+
+
+        <!-- App's own Javascript -->
+        <script src="/static/scripts/scripts.js"></script>
+        
+        
+    </body>
+</html>
