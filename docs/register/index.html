@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-    PittSensing | Visualization
+    PittSensing | Register
 </title>
         <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
         <meta charset="utf-8"/>
@@ -74,17 +74,17 @@
                   <a class="nav-link" href="/pittsensing.github.io/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/pittsensing.github.io/data">Data</a>
+                  <a class="nav-link" href="/pittsensing.github.io/data/">Data</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/pittsensing.github.io/register">Register</a>
+                  <a class="nav-link" href="/pittsensing.github.io/register/">Register</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/pittsensing.github.io/embedded">Embedded</a>
+                  <a class="nav-link" href="/pittsensing.github.io/embedded/">Embedded</a>
                 </li>
               </ul>
 
-              <a href="/pittsensing.github.io/map" class="btn btn-dark my-2 my-sm-0 rounded-pill" role="button">Platform</a>
+              <a href="/pittsensing.github.io/map/" class="btn btn-dark my-2 my-sm-0 rounded-pill" role="button">Platform</a>
             </div>
           </div>
         </nav>
@@ -94,23 +94,57 @@
         
 
         
-<div class="container p-5 scrollbar">
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-                <th scope="col">Device Name</th>
-                <th scope="col">Time</th>
-                <th scope="col">PM0.3</th>
-                <th scope="col">PM0.5</th>
-                <th scope="col">PM1.0</th>
-                <th scope="col">PM2.5</th>
-                <th scope="col">PM10</th>
-                <th scope="col">Reason</th>
-            </tr>
-        </thead>
-        
-    </table>
-</div>
+
+<form action="/pittsensing.github.io/register/" class="register-form" method="POST">
+    <div class="container">
+        <div class="pt-4 pb-3 text-center">
+            <h2>Join the PittSensing Community!</h2>
+            <!-- <hr class="featurette-divider"> -->
+            <!-- <p class="lead"></p> -->
+        </div>
+    
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input autocomplete="off" autofocus class="form-control" name="owner" id="full_name" placeholder="Jenny Taylor" type="text">
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-6">
+                <label for="lat" class="form-label">Latitude</label>
+                <input class="form-control" name="lat" id="lat" placeholder="38.739970" type="text" required>
+                <div class="invalid-feedback">
+                Valid latitude is required.
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="lng" class="form-label">Longitude</label>
+                <input class="form-control" name="lng" id="lng" placeholder="-78.344830" type="text" required>
+                <div class="invalid-feedback">
+                Valid longitude is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="device_id">Device ID</label>
+            <input class="form-control" name="device_id" id="device_id" placeholder="13047" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="device_name">Device Name</label>
+            <input class="form-control" name="device_name" id="device_name" placeholder="JennySCK" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="slack_id">Slack ID</label>
+            <input class="form-control" name="slack_id" id="slack_id" placeholder="URFBWRW4W" type="text">
+        </div>
+
+        <button class="btn btn-primary btn-block my-4" type="submit">Register</button>
+    </div>
+</form>
+
 
 
         <!-- App's own Javascript -->
