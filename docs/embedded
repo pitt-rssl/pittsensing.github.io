@@ -50,16 +50,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
         <!-- App's own CSS -->
-        <link href="/static/styles/styles.css" rel="stylesheet"/>
+        <link href="/pittsensing.github.io/static/styles/styles.css" rel="stylesheet"/>
 
         <!-- app's favicon -->
-        <link href="/static/imgs/favicon.ico" rel="icon">
+        <link href="/pittsensing.github.io/static/imgs/favicon.ico" rel="icon">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
           <div class="container">
             <a href="/">
-              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+              <img src="/pittsensing.github.io/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
             </a>
             <span class="navbar-title">
               PittSensing
@@ -110,22 +110,22 @@
 <div id="wb_Text5" style="position:absolute;left:529px;top:757px;width:411px;height:254px;z-index:5;">
 <span style="color:#000000;font-family:'Franklin Gothic Book';font-size:13px;"><strong>Petra Floyd (she/they)</strong> is a queer first-generation Liberian-American multidisciplinary artist and designer raised by working-class immigrants in Philadelphia, and she lives and works in Pittsburgh. Petra makes whatever she wants, however she wants, ideally making herself laugh throughout the process. Petra values improvised, devised, and collaborative modes of making and thinking. They link up with other instigator-activators to craft small moments and performances using close-at-hand materials and resources. Petra dreams about group movement and gameplay spaces for self-reflection and expansion. They make sounds, videos, drawings, and performances happen, with feeling.<br><br>Petra received a BA in Studio Art from Swarthmore College in 2012. They earned an MFA from Carnegie Mellon University’s School of Art in 2022, where they received a Lea Simonds graduate fellowship, project funding from The Frank-Ratchye Fund for Art @ the Frontier, and the inaugural Ken Meyer Professional Studio Development award. Petra is a BLK ART LAB artist-in-residence at Pittsburgh’s Protohaven makerspace and a 2022-2023 recipient of The Pittsburgh Foundation’s Advancing Black Arts in Pittsburgh and the Heinz Endowments’ Creative Development awards. They have been a Freshworks artist at Kelly Strayhorn Theater (2021), a resident artist at 40th Street Artist-in-Residence Program (2016-2017), a Fob Holder at Second State Press (2016), and a Post-college Apprentice at The Fabric Workshop and Museum (2014). Petra’s solo exhibition <em>Before the DJ Was Sound, and She Played It</em> will be on view at FJORD gallery in Philadelphia from March 11 – April 22, 2023.</span></div>
 <div id="wb_Image1" style="position:absolute;left:529px;top:604px;width:90px;height:135px;z-index:6;">
-<img src="/static/imgs/petra4.png" id="Image1" alt="" width="90" height="134"></div>
+<img src="/pittsensing.github.io/static/imgs/petra4.png" id="Image1" alt="" width="90" height="134"></div>
 <div id="wb_Image2" style="position:absolute;left:89px;top:376px;width:198px;height:149px;z-index:7;">
-<img src="/static/imgs/PXL_20230324_132328190.MP.jpg" id="Image2" alt="" width="198" height="149"></div>
+<img src="/pittsensing.github.io/static/imgs/PXL_20230324_132328190.MP.jpg" id="Image2" alt="" width="198" height="149"></div>
 <div id="wb_Image3" style="position:absolute;left:296px;top:374px;width:204px;height:153px;z-index:8;">
-<img src="/static/imgs/PXL_20230324_132334926.MP.jpg" id="Image3" alt="" width="204" height="153"></div>
+<img src="/pittsensing.github.io/static/imgs/PXL_20230324_132334926.MP.jpg" id="Image3" alt="" width="204" height="153"></div>
 <div id="wb_Image4" style="position:absolute;left:529px;top:376px;width:201px;height:151px;z-index:9;">
-<img src="/static/imgs/PXL_20230324_132341189.MP.jpg" id="Image4" alt="" width="201" height="151"></div>
+<img src="/pittsensing.github.io/static/imgs/PXL_20230324_132341189.MP.jpg" id="Image4" alt="" width="201" height="151"></div>
 <div id="wb_Image5" style="position:absolute;left:739px;top:376px;width:201px;height:151px;z-index:10;">
-<img src="/static/imgs/PXL_20230324_132348904.MP.jpg" id="Image5" alt="" width="201" height="151"></div>
+<img src="/pittsensing.github.io/static/imgs/PXL_20230324_132348904.MP.jpg" id="Image5" alt="" width="201" height="151"></div>
 <div id="wb_Image6" style="position:absolute;left:354px;top:183px;width:263px;height:173px;z-index:11;">
-<img src="/static/imgs/PXL_20230323_211846190.MP.jpg" id="Image6" alt="" width="263" height="173"></div>
+<img src="/pittsensing.github.io/static/imgs/PXL_20230323_211846190.MP.jpg" id="Image6" alt="" width="263" height="173"></div>
 
 
 
         <!-- App's own Javascript -->
-        <script src="/static/scripts/scripts.js"></script>
+        <script src="/pittsensing.github.io/static/scripts/scripts.js"></script>
         
         
     </body>

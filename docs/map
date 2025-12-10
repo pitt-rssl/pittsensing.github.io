@@ -50,16 +50,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
         <!-- App's own CSS -->
-        <link href="/static/styles/styles.css" rel="stylesheet"/>
+        <link href="/pittsensing.github.io/static/styles/styles.css" rel="stylesheet"/>
 
         <!-- app's favicon -->
-        <link href="/static/imgs/favicon.ico" rel="icon">
+        <link href="/pittsensing.github.io/static/imgs/favicon.ico" rel="icon">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
           <div class="container">
             <a href="/">
-              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+              <img src="/pittsensing.github.io/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
             </a>
             <span class="navbar-title">
               PittSensing
@@ -116,23 +116,23 @@
       <div class="card filterButton bg-light rubik">
         <button class="button button4" onClick="showCompare()"> Compare <img src=""/></button>
         <div id="btn-group2" class="btn-group2">
-                <button class="fil-btn-field2" onClick="handleSelector(1)"> Selection <img src="../static/imgs/filter_buttons/usr_select_def.png" heigth="40" width="40"/></button>
-                <button class="fil-btn-field2" onClick="handleSelector(2)"> Sensor Type <img src="../static/imgs/filter_buttons/sensortype_select_def.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field2" onClick="handleSelector(1)"> Selection <img src="/pittsensing.github.io/static/imgs/filter_buttons/usr_select_def.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field2" onClick="handleSelector(2)"> Sensor Type <img src="/pittsensing.github.io/static/imgs/filter_buttons/sensortype_select_def.png" heigth="40" width="40"/></button>
         </div>
         <button class="button button3" onClick="showFilter()"> Filter<img src=""/></button>
         <div id="btn-group" class="btn-group">
-                <button class="fil-btn-field" onClick="filterData(1)">Temperature   <img src="../static/imgs/filter_buttons/temp_default.png" heigth="40" width="40"/></button>
-                <button class="fil-btn-field" onClick="filterData(2)">PM 2.5   <img src="../static/imgs/filter_buttons/pm25_default.png"  heigth="40" width="40" /></button>
-                <button class="fil-btn-field" onClick="filterData(3)">Humidity   <img src="../static/imgs/filter_buttons/humidity_default.png" heigth="40" width="40"/></button>
-                <button class="fil-btn-field" onClick="filterData(0)">No Filter   <img src="../static/imgs/filter_buttons/nofilter_default.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field" onClick="filterData(1)">Temperature   <img src="/pittsensing.github.io/static/imgs/filter_buttons/temp_default.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field" onClick="filterData(2)">PM 2.5   <img src="/pittsensing.github.io/static/imgs/filter_buttons/pm25_default.png"  heigth="40" width="40" /></button>
+                <button class="fil-btn-field" onClick="filterData(3)">Humidity   <img src="/pittsensing.github.io/static/imgs/filter_buttons/humidity_default.png" heigth="40" width="40"/></button>
+                <button class="fil-btn-field" onClick="filterData(0)">No Filter   <img src="/pittsensing.github.io/static/imgs/filter_buttons/nofilter_default.png" heigth="40" width="40"/></button>
         </div>
       </div>
         <div class="card-body legend-body">
             <h5 class="card-title legend-title">Legend</h5>
             <hr class='divider'/>
-            <p class="card-text">Allegheny County:<img src="../static/imgs/default_sensor_imgs/alleghenycounty_def.png" width="35" height = "35"></p>
-            <p class="card-text">PurpleAir:<img src="../static/imgs/default_sensor_imgs/purpleair_def.png" width="35" height = "35"></p>
-            <p class="card-text">SmartCitizenKit:<img src="../static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></p>
+            <p class="card-text">Allegheny County:<img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/alleghenycounty_def.png" width="35" height = "35"></p>
+            <p class="card-text">PurpleAir:<img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/purpleair_def.png" width="35" height = "35"></p>
+            <p class="card-text">SmartCitizenKit:<img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></p>
         </div>
     </div>
     <div id="company-box" class="card company bg-light rubik">
@@ -140,9 +140,9 @@
           <h5 class="card-title company-title">Select Sensor Type</h5>
             <p>Which type of sensor?</p>
           <hr class='divider'/>
-          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(1)"> SmartCitizenKit  <img src="../static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></button>
-          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(2)"> PurpleAir  <img src="../static/imgs/default_sensor_imgs/purpleair_def.png"  width="35" height = "35"></button>
-          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(3)"> Allegheny  <img src="../static/imgs/default_sensor_imgs/alleghenycounty_def.png"  width="35" height = "35"></button>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(1)"> SmartCitizenKit  <img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/sck_def.png" width="35" height = "35"></button>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(2)"> PurpleAir  <img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/purpleair_def.png"  width="35" height = "35"></button>
+          <button class="fil-btn-field5" onClick="generateResultsCompanySelect(3)"> Allegheny  <img src="/pittsensing.github.io/static/imgs/default_sensor_imgs/alleghenycounty_def.png"  width="35" height = "35"></button>
           <button class="fil-btn-field6" onClick="reset()" >Return<img src=""/></button>
       </div>
     </div>
@@ -151,20 +151,20 @@
       <div class="card-body hum-gradient-body">
           <h5 class="card-title hum-gradient-title">Humidity</h5>
           <p class="gradient-info"> g.kg-1 </p>
-            <img src="../static/imgs/Gradients/humRainBow.png" >
+            <img src="/pittsensing.github.io/static/imgs/Gradients/humRainBow.png" >
           </div>
     </div>
     <div id="temp-gradient" class="card temp-gradient bg-light rubik">
       <div class="card-body temp-gradient-body">
           <h5 class="card-title temp-gradient-title">Temperature</h5>
           <p class="gradient-info"> Celsius °C </p>
-            <img src="../static/imgs/Gradients/tempRainBow.png" >
+            <img src="/pittsensing.github.io/static/imgs/Gradients/tempRainBow.png" >
           </div>
     </div>
     <div id="pm25-gradient" class="card pm25-gradient bg-light rubik">
       <div class="card-body pm25-gradient-body">
           <h5 class="card-title pm25-gradient-title">PM 2.5</h5>
-            <img src="../static/imgs/Gradients/pm25RainBow.png" >
+            <img src="/pittsensing.github.io/static/imgs/Gradients/pm25RainBow.png" >
           </div>
     </div>
 
@@ -173,7 +173,7 @@
           <h5 class="card-title type-title">Added Sensors:</h5>
           <p>Click on sensors to add</p>
           <hr class='divider'/>
-          <p class="card-text">Selected Sensors <img src="../static/imgs/filter_buttons/usr_select_def.png" width="25" height = "25"></p>
+          <p class="card-text">Selected Sensors <img src="/pittsensing.github.io/static/imgs/filter_buttons/usr_select_def.png" width="25" height = "25"></p>
           <p id="info"></p>
           <button class="fil-btn-field4" onClick="generateResultsUserSelect()"> Compare  <img src=""/></button>
           <button class="fil-btn-field4" onClick="clearSensorList()"> Clear  <img src=""/></button>
@@ -212,14 +212,6 @@
             <div class="container mb-2">
                 <div class="row align-middle">
                     <div class="col-sm-auto">
-                      <!--  <form class="form-inline">
-                          <label for="fields_selection">Filter:</label>
-                          <select id="fields_selection" class="form-control form-control-sm ml-2">
-                              <option value="_pm25">PM 2.5<img src="../static/imgs/pm25_default.png"/></option>
-                              <option value="_temp">Temperature<img src="../static/imgs/temp_default.png"/></option>
-                              <option value="_humidity">Humidity<img src="../static/imgs/humidity_default.png"/></option>
-                          </select>
-                        </form> -->
                         <form class="form-inline">
                             <label for="timeframe">Range:</label>
                             <select id="timeframe" class="form-control form-control-sm ml-2">
@@ -242,7 +234,7 @@
 
 
         <!-- App's own Javascript -->
-        <script src="/static/scripts/scripts.js"></script>
+        <script src="/pittsensing.github.io/static/scripts/scripts.js"></script>
         
         
     </body>

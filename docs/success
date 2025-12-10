@@ -50,16 +50,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
         <!-- App's own CSS -->
-        <link href="/static/styles/styles.css" rel="stylesheet"/>
+        <link href="/pittsensing.github.io/static/styles/styles.css" rel="stylesheet"/>
 
         <!-- app's favicon -->
-        <link href="/static/imgs/favicon.ico" rel="icon">
+        <link href="/pittsensing.github.io/static/imgs/favicon.ico" rel="icon">
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-light fixed-top sensing-navbar">
           <div class="container">
             <a href="/">
-              <img src="/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
+              <img src="/pittsensing.github.io/static/imgs/pitt_logo.png" width="42" height="42" class="d-inline-block align-top pitt-logo" alt="">
             </a>
             <span class="navbar-title">
               PittSensing
@@ -100,7 +100,7 @@
 
 
         <!-- App's own Javascript -->
-        <script src="/static/scripts/scripts.js"></script>
+        <script src="/pittsensing.github.io/static/scripts/scripts.js"></script>
         
         
     </body>
